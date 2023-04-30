@@ -25,7 +25,7 @@ export default {
       default: false,
     },
     value: {
-      type: [String, Number],
+      type: [String, Number, Date],
       required: true,
     },
   },
