@@ -1,5 +1,5 @@
 <template>
-  <div class="__index"></div>
+  <div class="__index __bettable-matches">Bettable Matches</div>
 </template>
 
 <script>
