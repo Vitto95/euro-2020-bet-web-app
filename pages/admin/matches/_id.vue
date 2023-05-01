@@ -1,8 +1,7 @@
 <template>
   <div class="__new-match">
-    <div>Create new match</div>
-    <nuxt-link to="/admin/matches">Back</nuxt-link>
-    <form
+    <CommonButton @click="goBack">Go back</CommonButton>
+    <!-- <form
       class="__box bg-white rounded-lg p-4"
       @submit.prevent="submit"
       type="POST"
@@ -57,7 +56,8 @@
       >
         Create Match
       </button>
-    </form>
+    </form> -->
+    <FootballMatchForm :id="$route.params.id" />
   </div>
 </template>
 <script>
@@ -89,6 +89,9 @@ export default {
   },
 
   methods: {
+    goBack() {
+      this.$router.push("/admin/matches");
+    },
     ...mapActions({
       fetchFootballMatch: "admin/matches/fetchFootballMatch",
     }),

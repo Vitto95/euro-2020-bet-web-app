@@ -18,7 +18,7 @@ export default {
   css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/moment-timezone.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -27,6 +27,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/moment",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

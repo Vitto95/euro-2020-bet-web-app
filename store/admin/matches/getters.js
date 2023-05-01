@@ -4,6 +4,7 @@ const getters = {
       id: match.id,
       ...match.attributes,
       matchName: `${match.attributes.homeTeamName} - ${match.attributes.awayTeamName}`,
+      bets: match.relationships.bets,
     }));
   },
 

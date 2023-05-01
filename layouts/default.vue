@@ -1,5 +1,5 @@
 <template>
-  <div class="__default-page bg-slate-200 min-h-screen">
+  <div class="__default-page p-4 bg-slate-100 min-h-screen">
     <LayoutHeader />
     <Nuxt />
   </div>
@@ -7,4 +7,4 @@
 <script>
 export default {};
 </script>
-<style lang=""></style>
+<style lang="scss"></style>
