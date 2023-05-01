@@ -1,15 +1,20 @@
 <template>
   <div class="__header">
-    <div class="__box">
-      <nuxt-link to="/">Home</nuxt-link>
-    </div>
+    <div class="__auth" v-if="$auth.loggedIn">
+      <div class="__box">
+        <nuxt-link to="/">Home</nuxt-link>
+      </div>
 
-    <div class="__box">
-      <nuxt-link to="/ranking">Ranking</nuxt-link>
+      <div class="__box">
+        <nuxt-link to="/ranking">Ranking</nuxt-link>
+      </div>
+      <div class="__box">
+        <nuxt-link to="/admin/matches" v-if="isAdmin">Admin</nuxt-link>
+        <button @click="logout">Logout</button>
+      </div>
     </div>
-    <div class="__box">
-      <nuxt-link to="/admin/matches" v-if="isAdmin">Admin</nuxt-link>
-      <button v-if="$auth.loggedIn" @click="logout">Logout</button>
+    <div v-else class="__public flex justify-end">
+      <nuxt-link to="/register">Register</nuxt-link>
     </div>
   </div>
 </template>
@@ -29,13 +34,15 @@ export default {
 </script>
 <style lang="scss">
 .__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem 1.5rem;
-  .__box {
+  .__auth {
     display: flex;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    .__box {
+      display: flex;
+      gap: 0.5rem;
+    }
   }
 }
 </style>
