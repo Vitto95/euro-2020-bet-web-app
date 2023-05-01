@@ -6,15 +6,25 @@
     :placeholder="placeholder"
     :required="required"
     :value="value"
+    :disabled="disabled"
+    :min="min"
   />
 </template>
 <script>
 export default {
   name: "Input",
   props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     inputType: {
       type: String,
       default: "text",
+    },
+    min: {
+      type: Number,
+      default: "null",
     },
     placeholder: {
       type: String,
@@ -26,7 +36,7 @@ export default {
     },
     value: {
       type: [String, Number, Date],
-      required: true,
+      default: null,
     },
   },
   methods: {

@@ -1,10 +1,10 @@
 <template>
-  <div class="__default-page bg-slate-200 min-h-screen">
-    <LayoutHeader />
+  <div class="__default-page p-4 bg-slate-100 min-h-screen">
+    <LayoutHeader v-if="$auth.loggedIn" />
     <Nuxt />
   </div>
 </template>
 <script>
 export default {};
 </script>
-<style lang=""></style>
+<style lang="scss"></style>
